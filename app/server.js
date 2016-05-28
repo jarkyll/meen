@@ -2,6 +2,7 @@ var express = require('express')
 var app = express()
 // use a page for navigation
 app.use(express.static(__dirname + '/public'))
+// same as app.use("/public", express.static(__dirname))
 
 var mongoose = require('mongoose')
 // made a database using mongo in terminal then in the shell
@@ -49,7 +50,7 @@ app.get('/', function(req, res){
 	// lets you use the index html page
 })
 
-app.listen(3000);
-console.log("listening on port 3000....")
+app.listen(1111);
+console.log("listening on port 1111....")
 
 
