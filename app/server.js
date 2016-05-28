@@ -1,5 +1,8 @@
 var express = require('express')
 var app = express()
+// use a page for navigation
+app.use(express.static(__dirname + '/public'))
+
 var mongoose = require('mongoose')
 // made a database using mongo in terminal then in the shell
 // I did use database
@@ -39,5 +42,14 @@ app.get('/person/hektor', function(req, res){
 app.get('/person/nabeel', function(req, res){
 	var resp = factory.getPerson({name: 'Nabeel'}, res)
 })
+
+
+app.get('/', function(req, res){
+	res.render('index', {title: 'Home'})
+	// lets you use the index html page
+})
+
 app.listen(3000);
 console.log("listening on port 3000....")
+
+
